@@ -1,0 +1,24 @@
+table.logo{
+   height: 300px;
+   border-collapse:collapse;
+   border-style: none;
+   border-width: 0;
+   float: left;
+   margin-left: 0;
+}
+
+.logo tr td{
+  vertical-align: bottom;
+  padding: 0;
+  border: none;
+}
+
+.logo tr{
+  border: none;
+  vertical-align: bottom;
+  padding: 0;
+}
+
+.logo img{
+    height: 40px;
+}
