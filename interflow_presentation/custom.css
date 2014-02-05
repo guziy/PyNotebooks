@@ -1,3 +1,8 @@
-.fort-code{
-    font-size: 40px;    
+.reveal {
+    overflow: visible;
+}
+
+
+.to-high {
+    height: 500px;    
 }
