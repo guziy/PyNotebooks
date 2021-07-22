@@ -1,0 +1,122 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Physics-problem:-A-mass-on-an-oscillating-inclined-plane">Physics problem: A mass on an oscillating inclined plane<a class="anchor-link" href="#Physics-problem:-A-mass-on-an-oscillating-inclined-plane">&#182;</a></h1><p>This problem comes from the problem book by Savchenko et al. which I mentioned in the blog before. It is the last problem on harmonic oscillations in the edition I have (3.30*). Since I am posting it here, it means that the solution took me quite long time and I have still some points that are not completely clear to me (hoping someone will comment and clarify it for me :-)).</p>
+<p><strong>Problem statement</strong></p>
+<p>Consider an inclined plane at an angle $\alpha$ with respect to the horizon. The plane is oscillating harmonically at high frequency along the axis ($x$) parallel to its surface and making the same angle $\alpha$ with the horizon (as shown in Fig. 1). The maximum speed of the oscillating plane is $v_0$. An object is then placed on the inclined plane. The friction coefficient between the plane and the object is $\mu$. Assuming that $\mu \gg \tan\alpha$ determine how would the object move and its mean velocity after a long period of time.</p>
+<p><img src="oscillating_inclined_plane.png" alt="Fig 1: Oscillating inclined plane with the mass on it,
+                                  forces are shown at the moment when the object is sliding up the plane
+                                  with the inertia force directed upwards."></p>
+<p><strong>Fig. 1</strong>: Oscillating inclined plane with the mass on it, forces are shown at the moment when the object is sliding up the plane with the inertia force directed upwards.</p>
+<p><a href="https://github.com/guziy/phy_latex_plots/blob/master/obj_on_oscillating_inclined_plane.tex">Link to the latex source of the figure</a></p>
+<p><strong>Solution</strong></p>
+<p>We will consider the object in the reference frame tight to the oscillating plane. In this reference frame there would be the inertial force (varying harmonically) acting on the object and the object will oscillate up and down the inclined plane. Since the frequency of the oscillations of the plane is high, then we can consider that there are only two states of the object: it is moving upwards and downwards with respect to the plane. So the object will be oscillating on the plane up and down.</p>
+<p>Let's take $T$ to be the period of the oscillating motion of the object. Which is equal to the period of oscillations of the plane.</p>
+<p>Let's denote:</p>
+<ul>
+<li>$t_1$ - time it takes the object to travel up with respect to the plane</li>
+<li>$t_2=T-t_1$ - time it takes the object to travel down with respect to the plane</li>
+</ul>
+<p>Let's consider projections of forces acting upon the object on the $x$-axis parallel to the inclined plane:</p>
+$$
+F_x = \pm\,\mu m g \cos\alpha - m g \sin\alpha - m\omega v_0 \cos\left( \omega t + \phi_0 \right)
+$$<p>The last term of the equation above is the force of inertia, assuming that the velocity of the inclined plane varies according to the formula $v(t)=v_0\sin\left( \omega t + \phi_0 \right)$.
+Since the object is sliding, there is the friction force $F_f=\pm\,\mu N = \pm\,\mu m g\cos\alpha$ acting on the object in the direction opposite to its velocity.</p>
+<p>Eventually, after a long time the change of momentum during each period $T$ would be 0 (stationarity condition):</p>
+$$
+\Delta p = \int_{0}^{T}dp = \int_{0}^{T}{F_x}{dt} = 0 \tag{1}
+$$<p>Substituting the $F_x$ into the expression above:</p>
+$$
+-m g T \sin\alpha  - \mu m g t_1 \cos\alpha  +  \mu m g  t_2 \cos\alpha = 0
+$$$$
+- T \sin\alpha  - \mu t_1 \cos\alpha  +  \mu \left( T - t_1 \right) \cos\alpha = 0 \Rightarrow \boxed{t_1 = \frac{T}{2} \left( 1 - \frac{\tan\alpha}{\mu} \right)}
+$$<p>By definition the mean velocity is:</p>
+$$
+\overline{v} \;\equiv\; \frac{1}{T}\left[\int_{0}^{t_1}{v_1(t)}{dt} + \int_{t_1}^{T}{v_2(t)}{dt} \right] \tag{2}
+$$<p>Let's determine the functions $v_1(t)$ and $v_2(t)$.</p>
+<p>Let's note that the velocity should be 0 at the turning points, therefore:</p>
+$$
+v_1(0) = v_1(t_1) = v_2(t_1) = v_2(T) = 0 
+$$<p>Applying the second Newton's law the velocity time derivatives can be expressed as:</p>
+$$
+\begin{split}
+d_t v_1(t) &amp; = -\mu g \cos\alpha - \omega v_0 \cos\left( \omega t + \phi_0 \right), t\in[0, t_1] \\
+d_t v_2(t) &amp; = \mu g \cos\alpha - \omega v_0 \cos\left( \omega t + \phi_0 \right), t\in[t_1, T]
+\end{split}
+$$<p>Here we neglected the projection of the gravity force ($F_{gx} = -mg\sin\alpha$) as it is much smaller than the force of friction, according to the problem statement.</p>
+<p>Integrating the equations for acceleration and using the 0-velocity conditions at turning points, we get:</p>
+$$
+\begin{split}
+v_1(t) &amp; = -\mu g t \cos\alpha - v_0 \sin\left(\omega t + \pi \right), t\in[0, t_1] \\
+v_2(t) &amp; = \mu g (t - t_1) \cos\alpha - v_0 \left(\sin\left( \omega t + \pi \right) - \sin\left( \omega t_1 + \pi \right)\right), t\in[t_1, T]
+\end{split}
+$$<p>$\phi_0=\pi$ follows from the equations $v_1(0) = 0$ and $v_1(t_1)=0$.</p>
+<p>Finally, by substituting the expressions for $v_1(t)$ and $v_2(t)$ we get:</p>
+$$
+\begin{split}
+\overline{v}\cdot T &amp; = \int_{0}^{t_1}{-\mu g t \cos\alpha}{dt} + \int_{t_1}^{T}{\mu g (t - t_1) \cos\alpha}{dt} - \int_{0}^{t_1}{v_0 \sin\left( \omega t + \pi \right)}{dt}\\ 
+ &amp; - \int_{t_1}^{T}{v_0 \sin\left( \omega t + \pi \right)}{dt}+\int_{t_1}^{T}{v_0 \sin\left( \omega t_1 + \pi \right)}{dt}\\
+\end{split}
+$$<p>By simplifying and integrating, we get:</p>
+$$
+\overline{v}\cdot T = -(T-t_1) v_0 \sin\left( \omega t_1 \right)
+$$<p>then substituting $t_1$ and using the equation $\omega \cdot T = 2\pi$:</p>
+$$
+\begin{split}
+\overline{v} \cdot T &amp; = -\left(\frac{T}{2} + \frac{\tan\alpha}{\mu}\right) v_0 \sin\left(\pi - \frac{\tan\alpha}{\mu} \pi \right) \\ 
+&amp; = -v_0 \left(\frac{T}{2} + \frac{\tan\alpha}{\mu}\right) \sin\left(\frac{\tan\alpha}{\mu} \pi \right) \\
+&amp; \approx -v_0 \frac{T}{2} \frac{\tan\alpha}{\mu} \pi 
+\end{split}
+$$<p>Then the final expression for the mean velocity is:</p>
+$$
+\boxed{\overline{v} = -v_0 \frac{\tan\alpha}{2\mu} \pi}
+$$<p><strong>Reflections</strong></p>
+<ul>
+<li><p>Let's double check that $v_1(t_1)=0$, i.e.,</p>
+<p>$$
+  -\mu g t_1 \cos\alpha - v_0 \sin\left(\omega t_1 + \pi \right) = 0
+  $$</p>
+<p>Substituting $t_1$:</p>
+<p>$$
+  -\mu g \frac{T}{2} \left( 1 - \frac{\tan\alpha}{\mu} \right) \cos\alpha + v_0 \sin\left(\omega \frac{T}{2} \left( 1 - \frac{\tan\alpha}{\mu} \right) \right) = 0
+  $$</p>
+<p>Simplifying:
+  $$
+  -\mu g \frac{T}{2} \left( 1 - \frac{\tan\alpha}{\mu} \right) \cos\alpha + v_0 \sin\left(\pi\frac{\tan\alpha}{\mu}\right) = 0
+  $$</p>
+<p>Using the approximation $\frac{\tan\alpha}{\mu} \ll 1$:</p>
+<p>$$
+  -\mu g \frac{T}{2} \cos\alpha + v_0 \pi\frac{\tan\alpha}{\mu} = 0
+  $$</p>
+<p>Well, it seems that in order to have $v_1(t_1) = 0$, it is necessary that the period of oscillation be:</p>
+<p>$$
+  T=v_0 2\pi\frac{\tan\alpha}{\mu^2 g\cos\alpha}
+  $$</p>
+<p>This makes me uncomfortable with the solution and the problem statement. Maybe there is something more to the motion described in the problem than I understand...</p>
+</li>
+</ul>
+<ul>
+<li><p>It is very easy to verify as well that $v_2(T) = 0$, assuming that $t_1\approx T/2$.</p>
+<p>$$
+ \begin{split}
+ v_2(T) &amp; = \mu g (T - t_1) \cos\alpha - v_0 \left(\sin\left( \omega T + \pi \right) - \sin\left( \omega t_1 + \pi \right)\right) \\
+ &amp; = \mu g (T - t_1) \cos\alpha + v_0\sin\left( \omega t_1 + \pi \right)
+ \end{split}
+ $$</p>
+<p>Then using the condition $v_1(t_1)=0$, we get
+ $$
+ v_2(T) = \mu g (T - t_1) \cos\alpha - \mu g t_1 \cos\alpha \approx 0
+ $$</p>
+</li>
+</ul>
+<ul>
+<li>$\overline{v} &lt; 0$, so the object will slide down from the plane.</li>
+</ul>
+
+</div>
+</div>
+</div>
+ 
+
+<script type="text/x-mathjax-config">   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, TeX: { equationNumbers: { autoNumber: "AMS" } }}); </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>

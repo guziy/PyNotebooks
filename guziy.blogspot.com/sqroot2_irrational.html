@@ -1,0 +1,30 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Prooving-that-$\sqrt{2}$-is-irrational">Prooving that $\sqrt{2}$ is irrational<a class="anchor-link" href="#Prooving-that-$\sqrt{2}$-is-irrational">&#182;</a></h1><p>In this post I would like to tell you about a math problem that I encountered for the first time during my 9th grade math exam. I guess I was 15 years old back then. The question, if I remember correctly, was to proove that $\sqrt{2}$ is irrational. At the exam I was trying to proove it assuming that the inverse statement is true, i.e. assuming that $\sqrt{2}$ is rational. So basically I did the following:</p>
+$$
+\sqrt{2} \in Q \Rightarrow \text{ exist } m, n \in Z \text{ such that } \sqrt{2} = \frac{m}{n}\Rightarrow m = n \sqrt{2}
+$$<p>And stopped there saying that this is a contradiction because of the whole number on the left and real numer on the right, but the fact that $n\sqrt{2}$ is a real number requires proof not less than the initial problem statement. I guess I got 0 points for the proof like that. I remember that I did very bad at that exam, and the mark was low (almost failed). It nevertheless taught me to never leave an exam even if completed in advance, so at all my following exams at school and the university I was double checking my solutions If I had time and had never left an exam before the alocated time elapsed.</p>
+<p>But, surprisingly, I have never got back to this problem afterwards. Until, 20 years later, my wife got the same question as homework. At that point I decided to revisit it. Please see my solution below, still using the contrary assertion:</p>
+\begin{equation}
+\text{Let } \sqrt{2} \in Q \Rightarrow \text{ exist } m, n \in Z \text{ such that } \sqrt{2} = \frac{m}{n}\Rightarrow m = n \sqrt{2} \Rightarrow \boxed{m^2 = 2 n^2}
+\end{equation}$$
+\text{Exist } k, l = 0, 1, 2, ..., +\infty \text{ such that } 
+\left\{\begin{array}{l}
+&amp;m=2^k\cdot m_1\\
+&amp;n=2^l\cdot n_1\\
+\end{array}\right.
+$$<p>where $m_1, n_1$ are odd.</p>
+<p>Substituting the above expressions for $m$ and $n$ into the last part of the equation $m^2 = 2 n^2$, we get:</p>
+$$
+2^{2k} m_1^2 = 2^{2l + 1} n_1^2,
+$$<p>where $m_1^2, n_1^2$ are odd, because $m_1$ and $n_1$ are odd.</p>
+<p>In order to be equal the left and right parts should have equal powers of each divisor. Therefore for the divisor 2 it is necessary that $2k = 2l + 1$, which is not possible, since the sets of odd and even numbers do not intersect. Since our assumption that $\sqrt{2} \in Q$ leads to a contradiction we conclude that the inverse to our initial assumption is true, i.e. $\sqrt{2} \notin Q$.</p>
+
+</div>
+</div>
+</div>
+ 
+
+<script type="text/x-mathjax-config">   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, TeX: { equationNumbers: { autoNumber: "AMS" } }}); </script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"> </script>
