@@ -12,3 +12,5 @@ cat << EOF >> ${ou_file}
 EOF
 
 sed -i 's/\&\#182\;//' ${ou_file}
+cat ${ou_file} | awk '{sub(/<a class="anchor-link".*?>.*<\/a>/,""); print}' > ${ou_file}.tmp
+mv ${ou_file}.tmp ${ou_file}
