@@ -1,0 +1,18 @@
+[workspace]
+authors = ["huziy <guziy.sasha@gmail.com>"]
+channels = ["conda-forge"]
+name = "PyNotebooks"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+jpl = "jupyter lab"
+
+[tasks.html]
+args = ["nbpath"]
+cwd = "guziy.blogspot.com"
+cmd = "bash convert_nb_to_bpost_html.sh {{ nbpath }} "
+
+[dependencies]
+python = "3.14.*"
+jupyter = ">=1.1.1,<2"
